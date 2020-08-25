@@ -30,7 +30,7 @@ $ tar -xzvf postgresql-42.2.16.jar
 
 ```shell
 $ sudo ./configure  
-$ make
+$ sudo make
 $ sudo make install
 ```
 
