@@ -13,25 +13,13 @@ comments: true
 * ~/.profile, odbc.ini, odbcinst.ini 설정
 
 
-#### unix ODBC
-unix ODBC 드라이버 매니저를 깔기 위해서는 http://www.unixodbc.org/ 에서 설명하는대로 하면 된다. 
+#### unixODBC
 ```shell
-$ wget ftp://ftp.unixodbc.org/pub/unixODBC/unixODBC-2.3.7.tar.gz
-```
-```shell
-$ tar -xzvf unixODBC-2.3.7.tar.gz
+$ sudo apt install unixodbc
 ```
 
-```shell
-$ sudo ./configure  
-$ sudo make
-$ sudo make install
-```
-./configure --prefix=/usr/local/이 디폴트이고 설치 디렉토리를 바꾸고 싶으면 prefix 뒤를 조정하면 된다.
 
-
-
-#### Psql ODBC
+#### psqlODBC
 위와 같은 방법으로 설치한다. ref.https://jdbc.postgresql.org/download.html
 ```shell
 $ wget https://jdbc.postgresql.org/download/postgresql-42.2.16.jar
