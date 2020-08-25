@@ -20,7 +20,7 @@ $ sudo apt install unixodbc
 
 
 #### psqlODBC
-위와 같은 방법으로 설치한다. ref.https://jdbc.postgresql.org/download.html
+ref. https://jdbc.postgresql.org/download.html
 ```shell
 $ wget https://jdbc.postgresql.org/download/postgresql-42.2.16.jar
 ```
