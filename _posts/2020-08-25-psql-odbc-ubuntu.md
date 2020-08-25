@@ -24,10 +24,10 @@ $ tar -xzvf unixODBC-2.3.7.tar.gz
 
 ```shell
 $ sudo ./configure  
-$ make
+$ sudo make
 $ sudo make install
 ```
-./configure --prefix=/usr/local/unixODBC가 디폴트이고, 설치 디렉토리를 바꾸고 싶으면 prefix 뒤를 조정하면 된다.
+./configure --prefix=/usr/local/이 디폴트이고 설치 디렉토리를 바꾸고 싶으면 prefix 뒤를 조정하면 된다.
 
 
 
