@@ -61,7 +61,7 @@ export ODBCINI=/usr/local/odbc.ini
 
 잘 됐는지 확인한다.
 ```shell
-cat ~/.profile
+$ cat ~/.profile
 ``` 
 
 #### odbcinst.ini & odbc.ini  설정
@@ -71,7 +71,7 @@ odbcinst.ini와 odbc.ini는 디폴트로 /usr/local/etc에 있다.
 
 vi로 편집해준다.
 ```shell
-sudo vim /usr/local/etc/odbcinst.ini
+$ vim /usr/local/etc/odbcinst.ini
 ```
 
 odbcinst.ini
@@ -95,16 +95,16 @@ Password=password
 ```
 
 ```shell
-odbcinst -q -d
+$ odbcinst -q -d
 ```
 
-```shell
-isql Postgresql-ansi
+```console
+$ isql Postgresql-ansi
 ```
 
 
 연결 성공
-```shell
+```console
 +---------------------------------------+
 | Connected!                            |
 |                                       |
