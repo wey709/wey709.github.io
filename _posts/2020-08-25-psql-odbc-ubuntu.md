@@ -75,7 +75,7 @@ $ vim /usr/local/etc/odbcinst.ini
 ```
 
 odbcinst.ini
-```shell
+```console
 [Postgresql ansi]
 Description=Postgresql ODBC driver
 Driver=/usr/local/lib/psqlodbca.so
@@ -84,7 +84,7 @@ FileUsage=1
 ```
 
 odbc.ini
-```shell
+```console
 [Postgresql-ansi]
 Driver=/usr/local/lib/psqlodbca.so
 Servername=localhost
