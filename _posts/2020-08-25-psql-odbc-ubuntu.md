@@ -84,7 +84,7 @@ FileUsage=1
 ```
 
 odbc.ini
-```
+```shell
 [Postgresql-ansi]
 Driver=/usr/local/lib/psqlodbca.so
 Servername=localhost
@@ -98,6 +98,19 @@ Password=password
 odbcinst -q -d
 ```
 
-```
+```shell
 isql Postgresql-ansi
+```
+
+
+연결 성공
+```shell
++---------------------------------------+
+| Connected!                            |
+|                                       |
+| sql-statement                         |
+| help [tablename]                      |
+| quit                                  |
+|                                       |
++---------------------------------------+
 ```
