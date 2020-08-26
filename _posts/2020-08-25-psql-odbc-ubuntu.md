@@ -44,7 +44,7 @@ $ vim ~/.profile
 편집모드에서 아래 두 줄을 추가한다.
 ```shell
 export ODBCSYSINI=/usr/local/etc
-export ODBCINI=/usr/local/odbc.ini
+export ODBCINI=/usr/local/etc/odbc.ini
 ```
 
 잘 됐는지 확인한다.
