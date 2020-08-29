@@ -33,7 +33,7 @@ comments: true
 학습을 할 때는 \\(E\\)에 대응되는 \\(E^r\\) 튜플을 만드는데 \\(P\\)와 \\(O_2\\)는 정상적인 튜플\\(E\\)의 \\(P\\)와 \\(O_2\\)와 같고, \\(O_1\\)을 무작위로 대체한다. 
 \\(E\\)와 \\(E^r\\) 각각 내부의 원소들끼리의 관계가 얼마나 그럴듯한지 계산하는데(당연히 무작위로 만들어진 튜플 \\(E^r\\)이 덜 그럴듯할 것이다), 두 score의 차이가 1 미만이면 back-propagation을 통해 가중치(학습되어야하는 파라미터들)를 갱신하고, 1 이상이 되면 그 튜플에 대해서는 학습을 멈추고 다음 튜플로 넘어간다.
 
-NTN model은 S.Richard, et al의 "Reasoning with neural tensor networks for knowledge base completion." 논문에 자세히 나온다. 
+NTN model은 Socher, et al의 "Reasoning with neural tensor networks for knowledge base completion." 논문에 자세히 나온다. 
 왜 텐서를 쓰는지는 위 논문에서 이야기하는데, 예를 들어 그냥 neural network에 개체(여기서는 \\(P\\)와 두 개의 \\(O\\))가 들어간다면 두 벡터는 (비선형적인 activation function을 통과한다 한들) concatenate 될 뿐인데, 중간에 텐서를 놓으면 그 텐서의 각 slice가 두 벡터의 관계를 포착할 수 있고, 여러 slice를 두기 때문에 다양한 관계를 표현가능하다는 것이다.
 그래서 has part라는 말이 있을 때 car has part~ 와 dog has part~는 조금 상이한 의미를 가지는데 그 두 가지 의미를 각각 다른 slice로 표현시킬 수 있다고 논문에서 예시로 든다.
 
