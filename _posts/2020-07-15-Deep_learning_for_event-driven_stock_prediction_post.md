@@ -1,11 +1,18 @@
 ---
-layout: post
 title: "논문 공부: Deep learning for event-driven stock prediction"
 date: 2020-07-15
 excerpt: "20200715 세미나 주제"
-tags: [deep learning, CNN, stock prediction, embedding]
-comments: true
+excerpt_separator: "<!--more-->"
+layout: single
+classes: wide
+tags: 
+ - deep learning
+ - CNN
+ - stock prediction
+ - embedding
 ---
+
+
 
 
 공부한 논문: Ding, Xiao, et al. "Deep learning for event-driven stock prediction." Twenty-fourth international joint conference on artificial intelligence. 2015.
@@ -13,7 +20,7 @@ comments: true
 주가 예측을 할 때 관련 뉴스를 가지고 NLP를 사용한다는건 평범한 접근 방법인데, 그에 한 단계 나아가 주가 관련 이벤트를 추출하고, 임베딩했다는 점이 새로웠다.
 이벤트 추출할 때 쓰는 기술들이 open information extraction이라던가 큰 주제에 종속되어 있어서 그 부분에 대해서는 가볍게 보고 넘어갔다.
 
-### Event extraction & embeddings
+## Event extraction & embeddings
 
 #### Event extraction
 이벤트를 튜플 \\(E\\)로 나타낸다. 
@@ -38,9 +45,9 @@ NTN model은 Socher, et al의 "Reasoning with neural tensor networks for knowled
 그래서 has part라는 말이 있을 때 car has part~ 와 dog has part~는 조금 상이한 의미를 가지는데 그 두 가지 의미를 각각 다른 slice로 표현시킬 수 있다고 논문에서 예시로 든다.
 
 
-### Deep Prediction Model
+## Deep Prediction Model
 임베딩한 이벤트로 주가를 예측하는데, 특이하게도 CNN을 쓴다. 30일 이내인 long-term events들끼리 일정한 크기의 윈도우로 convolution 연산을 해 long-term events들의 feature를 뽑은 벡터가 만들어지고, 7일 이내의 mid-term events들도 마찬가지 방식으로 벡터가 만들어진다. 주가를 예측하는 날 하루 전의 short-term events들은 각각 임베딩된 \\(U\\) 그대로 사용된다. 이 벡터들이 hidden layer를 통과해 output으로는 증가/감소의 binary class가 나온다. 
 
 
-### Experiments
+## Experiments
 두 가지 측면에서 비교하는데, 하나는 event-embedding이 word-embedding이나 임베딩하기 전의 event extraction보다 나은지 비교하는 것이고, 다른 하나는 vanilla neural net을 쓰는 것보다 CNN을 쓰는게 나은지 비교하는 것이다. 또 다른 SOTA와도 비교한다. 결과적으로 같은 조건일 때 input으로 event-embedding이 제일 낫고, 같은 input일 때 NN보다 CNN이 낫다. 특히 눈여겨 볼 점은 individual stock prediction 부분인데 Fortune magazine의 랭킹이 낮은 회사일수록 다른 방법들과 이 논문의 방법(event embedding & cnn)의 accuracy가 baseline과 비교했을 때 크다는 것이다. 랭킹이 낮을수록 관련 뉴스도 적게 뜰 것인데 CNN 덕분에 비교적 넓은 기간의 이벤트들까지 고려할 수 있게되어서 그런 것이라고 해석한다.
