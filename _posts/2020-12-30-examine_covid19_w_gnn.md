@@ -65,11 +65,11 @@ fuction \\(\mathcal{F}^{(l)}\\)와 \\(\mathcal{G}^{(l)}\\)는 학습된다.
 #### Modelling the COVID-19 Graph
 
 
-| <img src="https://raw.githubusercontent.com/wey709/wey709.github.io/master/_posts/assets/1230/fig2.png" width="400"/> | 
-|:--:| 
-| *Kapoor, Amol, et al. "Examining covid-19 forecasting using spatio-temporal graph neural networks."*
-COVID-19 spatial-temporal graph의 단면 |     
-
+<figure class="align-center">
+  <img src="https://raw.githubusercontent.com/wey709/wey709.github.io/master/_posts/assets/1230/fig2.png" alt=""> 
+  <figcaption>COVID-19 spatial-temporal graph의 단면 from Kapoor, Amol, et al. "Examining covid-19 forecasting using spatio-temporal graph neural networks." 
+  </figcaption>
+</figure> 
 
 
 <br>spatial domain에서는 edge가 intra-flow로 scale된 region간 inter-flow를 나타낸다.<br/> temporal domain에서는 edge는 binary로 연결여부만을 나타내며 t 시점의 node는 t-1, ..., t-d 시점의 해당 node와 연결된다.
@@ -78,13 +78,7 @@ COVID-19 spatial-temporal graph의 단면 |
 #### Skip-Connections Model
 
 
-| <img src="https://raw.githubusercontent.com/wey709/wey709.github.io/master/_posts/assets/1230/fig3.png" width="400"/> | 
-|:--:| 
-| *Kapoor, Amol, et al. "Examining covid-19 forecasting using spatio-temporal graph neural networks."*
-2-hop skip-connection model |  
-
-
-$$\mathbf{H}_0 = mlp(x_t|x_{t-1}|...|x_{t-d})$$ 
+$$\mathbf{H}_0 = mlp(x_t|x_{t-1}|...|x_{t-d})$$
 
 $$\mathbf{H}_{l+1} = \sigma(\hat{A}H_lW_l) | H_0 $$
 
@@ -100,6 +94,17 @@ $H_{l+1}$은 근접행렬(정확히 말하면 어떤 방식으로 정규화된..
 어떤 l+1의 hidden state에 대해서도 $H_0$이 concat 되기 때문에, 앞에서 살펴봤던 Deng, Songgaojun, et al의 모델에 비해 temporal 정보를 더 강하게 반영하게 되는 것 같다.
 
 끝으로, 제일 마지막 hidden state를 다층 퍼셉트론 모델에 넣어 예측값을 구한다.
+
+그림으로 확인하면 다음과 같다.
+
+
+<figure class="align-center">
+  <img src="https://raw.githubusercontent.com/wey709/wey709.github.io/master/_posts/assets/1230/fig3.png" alt=""> 
+  <figcaption>2-hop skip-connection model from Kapoor, Amol, et al. "Examining covid-19 forecasting using spatio-temporal graph neural networks." 
+  </figcaption>
+</figure> 
+
+여기서는 2-hop까지 반영하기 때문에 $H_0$을 제외한 은닉층은 하나이다.
 
 
 ## Experiments
