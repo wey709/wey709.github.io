@@ -1,7 +1,7 @@
 ---
 title: "논문 공부: Examining covid-19 forecasting using spatio-temporal graph neural networks"
 date: 2020-12-30
-excerpt: "세미나 주제"
+excerpt: "읽은날짜: 201230"
 excerpt_separator: "<!--more-->"
 layout: single
 classes: wide
@@ -68,9 +68,10 @@ fuction \\(\mathcal{F}^{(l)}\\)와 \\(\mathcal{G}^{(l)}\\)는 학습된다.
 
 <figure class="align-center" style="width: 400px">
   <img src="https://raw.githubusercontent.com/wey709/wey709.github.io/master/_posts/assets/1230/fig2.png" alt=""> 
-  <figcaption>Kapoor, Amol, et al. "Examining covid-19 forecasting using spatio-temporal graph neural networks." <br>COVID-19 spatial-temporal graph의 단면<br/>
+  <figcaption>Kapoor, Amol, et al. "Examining covid-19 forecasting using spatio-temporal graph neural networks." <br>[COVID-19 spatial-temporal graph의 단면]<br/>
   </figcaption>
 </figure> 
+
 <br>spatial domain에서는 edge가 intra-flow로 scale된 region간 inter-flow를 나타낸다.<br/> temporal domain에서는 edge는 binary로 연결여부만을 나타내며 t 시점의 node는 t-1, ..., t-d 시점의 해당 node와 연결된다.
 
 
@@ -99,7 +100,7 @@ $H_{l+1}$은 근접행렬(정확히 말하면 어떤 방식으로 정규화된..
 
 <figure class="align-center" style="width: 400px">
   <img src="https://raw.githubusercontent.com/wey709/wey709.github.io/master/_posts/assets/1230/fig3.png" alt=""> 
-  <figcaption>Kapoor, Amol, et al. "Examining covid-19 forecasting using spatio-temporal graph neural networks." <br>2-hop skip-connection model <br/>
+  <figcaption>Kapoor, Amol, et al. "Examining covid-19 forecasting using spatio-temporal graph neural networks." <br>[2-hop skip-connection model] <br/>
   </figcaption>
 </figure> 
 
