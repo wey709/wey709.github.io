@@ -27,7 +27,7 @@ COVID-19 forecast처럼 전염병 예측의 경우, 접근 방법이 크게 두 
 ## Background
 #### Spatio-Temporal Graph Neural Networks
 
-spatio-temporal graph는 node간의 연결을 time과 space의 함수로 보는 모델이다. 이 절에서 참조한 논문이 있는데, 해당 논문에서 제안한 모델(Deng, Songgaojun, et al)을 살펴보자.
+spatio-temporal graph는 node간의 연결을 time과 space의 함수로 보는 모델이다. 이 절에서 참조한 논문이 있는데, 해당 논문(Deng, Songgaojun, et al)에서 제안한 모델을 살펴보자.
 
 
 <figure class="align-center">
@@ -37,7 +37,7 @@ spatio-temporal graph는 node간의 연결을 time과 space의 함수로 보는 
 </figure>      
 대략 상단이 temporal을, 하단이 spatial을 반영한다.
 
-먼저 spatial 정보를 이용하기 위해 각 region의 t,...,t-d의 sequence를 input으로 하는 RNN을 이용해 t 시점을 재표현한다. 이때 temporal 정보가 좀 반영되는 셈이다. 그리고 그렇게 재표현된 region들의 t 시점 벡터를 이용해 attention coefficient $a_{ij}$를 정의하는데 location i에 location j가 얼마나 영향을 미치는지 계량한다.
+먼저 spatial 정보를 이용하기 위해 각 region의 t,...,t-d의 sequence를 input으로 하는 RNN을 이용해 t 시점을 재표현한다. 이때 temporal 정보가 좀 반영되는 셈이다. 그리고 그렇게 재표현된 region들의 t 시점 벡터를 이용해 attention coefficient $a_{ij}$를 정의하는데 location i에 location j가 얼마나 영향을 미치는지 나타내게 된다.
 
 다음으로 temporal 정보를 이용하기 위해서, k개의 필터를 이용해 region별로(다시 말해, 한 region의 시계열 데이터를 요소로 하는 벡터) convolution 연산을 한다. convolution 연산을 하기 때문에 region의 temporal sequence가 가진 local pattern을 포착할 수 있다. GNN 모델에서 초기화값, 즉 $h_0$의 노드값으로 이용된다.
 
@@ -85,9 +85,9 @@ $$\mathbf{P} = mlp(\mathbf{H}_s) $$
 
 
 
-convolution + skip connection을 활용한 모델이다.  
+convolution & skip connection을 활용한 모델이다.  
 
-$H_0$은 단순히 node의 temporal 정보를 concatenating해 다층 퍼셉트론 모델에 넣은 것이다.  
+$H_0$은 단순히 node의 temporal 정보를 concatenating해 mlp에 넣은 결과이다.  
 $H_{l+1}$은 근접행렬(정확히 말하면 어떤 방식으로 정규화된..)과 이전 시점의 hidden state $H_l$, 가중치를 곱하고 그에 $H_0$을 concatenating한다. 즉 근접행렬을 곱하기 때문에 convolution이고 $H_0$을 concat하기 때문에 skip-connection이 되는 것이다.
 
 어떤 l+1의 hidden state에 대해서도 $H_0$이 concat 되기 때문에, 앞에서 살펴봤던 Deng, Songgaojun, et al의 모델에 비해 temporal 정보를 더 강하게 반영하게 되는 것 같다.
@@ -103,13 +103,13 @@ $H_{l+1}$은 근접행렬(정확히 말하면 어떤 방식으로 정규화된..
   </figcaption>
 </figure> 
 
-여기서는 2-hop까지 반영하기 때문에 $H_0$을 제외한 은닉층은 하나이다.
+여기서는 2-hop까지 반영하기 때문에 $H_0$을 제외한 은닉층은 두 개이다.
 
 
 ## Experiments
 #### Data
 
-NYT COVID-19 Dataset, Google COVID-19 Aggregated Mobility Research Dataset, Google Community Mobility Reports 데이터들을 이용하였다. 
+NYT COVID-19 Dataset, Google COVID-19 Aggregated Mobility Research Dataset, Google Community Mobility Reports 데이터를 이용해 데이터를 그래프화하였다. 
 각 node는 지역정보(state, county)와 날짜, 누적 확진, 누적 사망을 가지고 있다. 앞서 말했듯 edge는 지역간 mobility flow를 나타내는데, Google COVID-19 Aggregated Mobility Research Dataset, Google Community Mobility Reports를 통해 계산되었다.
 
 #### Case Prediction Performance
@@ -121,4 +121,4 @@ RMSLE, Corr을 제시하고 있는데 baseline들보다 대체로 좋게 나왔�
 ## Conclusion
 전염 역학에 대해 미리 상정하지 않고, 데이터로부터 그 역학을 학습할 수 있다는 점, region level 정보 뿐만 아니라 inter-regional interaction을 적극적으로 반영한다는 점에서 타 모델들과 차별성이 있다.
 
-이 연구는 미국의 county만을 대상으로 하고, 장시간의 데이터로 학습한 것도 아니기 때문에 더 장시간, 넓은 범위의 연구를 하는게 future work로 남아있다.
+이 연구는 미국의 county만을 대상으로 하고, 장시간의 데이터로 학습한 것도 아니기 때문에 더 장시간, 넓은 범위를 대상으로 연구하는게 future work가 될 수 있다.
