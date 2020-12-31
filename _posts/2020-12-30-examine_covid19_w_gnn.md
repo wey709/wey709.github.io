@@ -30,10 +30,11 @@ COVID-19 forecast처럼 전염병 예측의 경우, 접근 방법이 크게 두 
 spatio-temporal graph는 node간의 연결을 time과 space의 함수로 보는 모델이다. 이 절에서 참조한 논문이 있는데, 해당 논문에서 제안한 모델(Deng, Songgaojun, et al)을 살펴보자.
 
 
-| ![Cola-GNN](https://raw.githubusercontent.com/wey709/wey709.github.io/master/_posts/assets/1230/fig1.png) | 
-|:--:| 
-| *Deng, Songgaojun, et al. "Graph message passing with cross-location attentions for long-term ILI prediction." arXiv preprint arXiv:1912.10202 (2019).* |     
-
+<figure class="align-center">
+  <img src="https://raw.githubusercontent.com/wey709/wey709.github.io/master/_posts/assets/1230/fig1.png" alt=""> 
+  <figcaption>Deng, Songgaojun, et al. "Graph message passing with cross-location attentions for long-term ILI prediction."
+  </figcaption>
+</figure>      
 대략 상단이 temporal을, 하단이 spatial을 반영한다.
 
 먼저 spatial 정보를 이용하기 위해 각 region의 t,...,t-d의 sequence를 input으로 하는 RNN을 이용해 t 시점을 재표현한다. 이때 temporal 정보가 좀 반영되는 셈이다. 그리고 그렇게 재표현된 region들의 t 시점 벡터를 이용해 attention coefficient $a_{ij}$를 정의하는데 location i에 location j가 얼마나 영향을 미치는지 계량한다.
@@ -65,13 +66,11 @@ fuction \\(\mathcal{F}^{(l)}\\)와 \\(\mathcal{G}^{(l)}\\)는 학습된다.
 #### Modelling the COVID-19 Graph
 
 
-<figure class="align-center">
+<figure class="align-center" style="width: 400px">
   <img src="https://raw.githubusercontent.com/wey709/wey709.github.io/master/_posts/assets/1230/fig2.png" alt=""> 
-  <figcaption>COVID-19 spatial-temporal graph의 단면 from Kapoor, Amol, et al. "Examining covid-19 forecasting using spatio-temporal graph neural networks." 
+  <figcaption>Kapoor, Amol, et al. "Examining covid-19 forecasting using spatio-temporal graph neural networks." <br>COVID-19 spatial-temporal graph의 단면<br/>
   </figcaption>
 </figure> 
-
-
 <br>spatial domain에서는 edge가 intra-flow로 scale된 region간 inter-flow를 나타낸다.<br/> temporal domain에서는 edge는 binary로 연결여부만을 나타내며 t 시점의 node는 t-1, ..., t-d 시점의 해당 node와 연결된다.
 
 
@@ -98,9 +97,9 @@ $H_{l+1}$은 근접행렬(정확히 말하면 어떤 방식으로 정규화된..
 그림으로 확인하면 다음과 같다.
 
 
-<figure class="align-center">
+<figure class="align-center" style="width: 400px">
   <img src="https://raw.githubusercontent.com/wey709/wey709.github.io/master/_posts/assets/1230/fig3.png" alt=""> 
-  <figcaption>2-hop skip-connection model from Kapoor, Amol, et al. "Examining covid-19 forecasting using spatio-temporal graph neural networks." 
+  <figcaption>Kapoor, Amol, et al. "Examining covid-19 forecasting using spatio-temporal graph neural networks." <br>2-hop skip-connection model <br/>
   </figcaption>
 </figure> 
 
