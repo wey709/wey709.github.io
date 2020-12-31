@@ -65,7 +65,7 @@ fuction \\(\mathcal{F}^{(l)}\\)와 \\(\mathcal{G}^{(l)}\\)는 학습된다.
 #### Modelling the COVID-19 Graph
 
 
-| ![COVID-19 graph slice](https://raw.githubusercontent.com/wey709/wey709.github.io/master/_posts/assets/1230/fig2.png=400*) | 
+| ![COVID-19 graph slice](https://raw.githubusercontent.com/wey709/wey709.github.io/master/_posts/assets/1230/fig2.png){ width = 50% } | 
 |:--:| 
 | *Kapoor, Amol, et al. "Examining covid-19 forecasting using spatio-temporal graph neural networks."*
 COVID-19 spatial-temporal graph의 단면 |     
@@ -78,7 +78,7 @@ COVID-19 spatial-temporal graph의 단면 |
 #### Skip-Connections Model
 
 
-| ![COVID-19 graph slice](https://raw.githubusercontent.com/wey709/wey709.github.io/master/_posts/assets/1230/fig3.png=400x) | 
+| ![COVID-19 graph slice](https://raw.githubusercontent.com/wey709/wey709.github.io/master/_posts/assets/1230/fig3.png){ width = 50% } | 
 |:--:| 
 | *Kapoor, Amol, et al. "Examining covid-19 forecasting using spatio-temporal graph neural networks."*
 2-hop skip-connection model |  
