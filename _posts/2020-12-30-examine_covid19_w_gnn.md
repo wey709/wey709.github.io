@@ -1,13 +1,14 @@
 ---
 title: "논문 공부: Examining covid-19 forecasting using spatio-temporal graph neural networks"
 date: 2020-12-30
-excerpt: "읽은날짜: 201230"
+excerpt: "읽은 날짜: 201230"
 excerpt_separator: "<!--more-->"
 layout: single
 classes: wide
 tags: 
  - deep learning
  - graph
+ - reading papers 
 ---
 
 

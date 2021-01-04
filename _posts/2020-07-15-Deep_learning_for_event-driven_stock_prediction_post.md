@@ -7,9 +7,8 @@ layout: single
 classes: wide
 tags: 
  - deep learning
- - CNN
- - stock prediction
  - embedding
+ - reading papers 
 ---
 
 
