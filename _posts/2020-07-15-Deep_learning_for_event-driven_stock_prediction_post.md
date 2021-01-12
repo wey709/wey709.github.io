@@ -26,7 +26,7 @@ tags:
 \\[E = (O_1, P, O_2, T)\\]
 \\(P\\)는 action이며 \\(O_1, O_2\\)는 Object이다. 예를 들어 'Samsung display unit sees robust smartphone growth'라는 문장이 있다면 \\(E\\)는 (Samsung display unit, sees, robust smartphone growth)가 되는 것이다.
 이벤트 추출을 위해서는 ReVerb와 ZPar를 사용하는데, 우선 ReVerb로 후보 튜플 \\(E'\\)를 뽑고, ZPar로 타당한지 필터링한다. 
-이벤트 추출을 하면 모든 문장은 각각 다른 이벤트 \\(E\\)로 추출되어, 전체적으로 봤을 때 매우 sparse한 구조가 되고 이를 해결하기 위해 embeddding을 하는 것이다. 
+이벤트 추출을 하면 모든 문장은 각각 다른 이벤트 \\(E\\)로 추출되어, 전체적으로 봤을 때 매우 sparse한 구조가 되고 이를 해결하기 위해 embedding을 하는 것이다. 
 
 
 #### Event embedding
