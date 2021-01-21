@@ -1,6 +1,7 @@
 ---
 title: "spectral graph partitioning"
 date: 2021-01-19
+excerpt: "laplacian matrix가 graph partitioning에 어떻게 활용되는지 알아보자"
 excerpt_separator: "<!--more-->"
 layout: single
 classes: wide

@@ -1,5 +1,5 @@
 ---
-title: "논문 공부: Examining covid-19 forecasting using spatio-temporal graph neural networks"
+title: "Examining covid-19 forecasting using spatio-temporal graph neural networks 논문 공부"
 date: 2020-12-30
 excerpt: "읽은 날짜: 201230"
 excerpt_separator: "<!--more-->"
