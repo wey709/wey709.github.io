@@ -105,11 +105,11 @@ A의 $\lambda = 0 $에 대응하는 eigenvector를 생각해보면, 직교하는
 앞의 내용은 차치하고, 다시 graph partitioning 문제로 돌아와보자.  
 partition 문제는 각 vertex에 1 혹은 -1 값을 부여하는 문제로 전환되어 아래와 같은 식으로 나타낼 수 있다.  
 
-$$\min_x \sum_{(i,j)\in E} (x_i - x_j)^2$$
+$$\min_x \sum_{(i,j)\in E} (\mathbf{x}_i - \mathbf{x}_j)^2$$
 
 이 때, $x_i$는 assignment vector로 다음과 같이 정의된다.  
 
- $$  x_i =
+ $$  \mathbf{x}_i =
 \begin{cases}
 \begin{aligned}
  1,  & \text{ node $i \in S$} \\
@@ -119,21 +119,22 @@ $$\min_x \sum_{(i,j)\in E} (x_i - x_j)^2$$
 
 각 vertex에 해당하는 $x_i$에 모두 같은 값을 부여하면 위 식이 0으로 최소화되겠지만, partition을 찾으려는 우리의 목적과 어긋나기 때문에 다음과 같은 contraint을 건다.
 
-$$\sum_i x_i = 0 $$  
+$$\sum_i \mathbf{x}_i = 0 $$  
 
-잎에서 보았듯, $ \sum_{(i,j)\in E} (x_i - x_j)^2 = x^TLx$ 이므로, 재표현하면 다음과 같다.
+잎에서 보았듯, $ \sum_{(i,j)\in E} (\mathbf{x}_i - \mathbf{x}_j)^2 = \mathbf{x}^TL\mathbf{x}$ 이므로, 재표현하면 다음과 같다.
 
 $$
 \begin{array}{ll}
-\text{minimize}  & x^TLx  \\
-\text{subject to}& x^T\mathbf1=0
+\text{minimize}  & \mathbf{x}^TL\mathbf{x}  \\
+\text{subject to}& \mathbf{x}^T\mathbf1=0 \\
+& \mathbf{x}_i \in \{ -1, 1 \}
 \end{array}
 $$  
 
 
-이 문제는 NP-hard이므로, $x_i \in \\{ -1, 1 \\}$의 constraint을 $x^Tx=n$으로 느슨하게 해준다.  
+이 문제는 NP-hard이므로, $\mathbf{x}_i \in \\{ -1, 1 \\}$의 constraint을 $\mathbf{x}^T\mathbf{x}=n$으로 느슨하게 해준다.  
 
-relaxed constraint 하에서 최적화 문제를 풀면, vector $x^*$는 Laplacian matrix의 두 번째로 작은 eigenvalue에 대응하는 eigenvector이다. 이 벡터는 Fiedler vector라고도 불린다.  
+relaxed constraint 하에서 최적화 문제를 풀면, vector $\mathbf{x}^*$는 Laplacian matrix의 두 번째로 작은 eigenvalue에 대응하는 eigenvector이다. 이 벡터는 Fiedler vector라고도 불린다.  
 
 이렇게 partitioning의 문제가 Laplacian matrix의 eigenvalue를 찾는 문제로 전환되었다.
 
