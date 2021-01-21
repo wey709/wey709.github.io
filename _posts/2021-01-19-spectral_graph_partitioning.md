@@ -97,13 +97,13 @@ A의 $\lambda = 0 $에 대응하는 eigenvector를 생각해보면, 직교하는
 
 이 예를 통해 두 가지 사실을 확인했다.
 1. $\lambda_2 > 0$, iff G is connected
-2. 가장 작은 eigenvector의 multiplicity는 그래프의 connected components 수와 같다.
+2. 가장 작은 eigenvalue의 multiplicity는 그래프의 connected components 수와 같다.
 
 
 #### Graph partitioning
 
-앞의 내용은 차치하고, 다시 graph partitioning 문제로 돌아와보자.  
-partition 문제는 각 vertex에 1 혹은 -1 값을 부여하는 문제로 전환되어 아래와 같은 식으로 나타낼 수 있다.  
+다시 graph partitioning 문제로 돌아와보자.  
+graph partitioning 문제는 각 vertex에 1 혹은 -1 값을 부여하는 문제로 전환되어, 아래와 같은 식으로 나타낼 수 있다.  
 
 $$\min_x \sum_{(i,j)\in E} (\mathbf{x}_i - \mathbf{x}_j)^2$$
 
@@ -117,7 +117,7 @@ $$\min_x \sum_{(i,j)\in E} (\mathbf{x}_i - \mathbf{x}_j)^2$$
 \end{aligned}
 \end{cases}$$  
 
-각 vertex에 해당하는 $x_i$에 모두 같은 값을 부여하면 위 식이 0으로 최소화되겠지만, partition을 찾으려는 우리의 목적과 어긋나기 때문에 다음과 같은 contraint을 건다.
+각 vertex에 해당하는 $x_i$에 모두 같은 값을 부여하면 위 식이 0으로 최소화되겠지만, partition을 찾으려는 우리의 목적에 어긋나기 때문에 다음과 같은 contraint을 건다.
 
 $$\sum_i \mathbf{x}_i = 0 $$  
 
