@@ -1,5 +1,5 @@
 ---
-title: "spectral graph partitioning"
+title: "Spectral graph partitioning"
 date: 2021-01-19
 excerpt: "laplacian matrix가 graph partitioning에 어떻게 활용되는지 알아보자"
 excerpt_separator: "<!--more-->"
@@ -117,7 +117,7 @@ $$\min_x \sum_{(i,j)\in E} (\mathbf{x}_i - \mathbf{x}_j)^2$$
 \end{aligned}
 \end{cases}$$  
 
-각 vertex에 해당하는 $x_i$에 모두 같은 값을 부여하면 위 식이 0으로 최소화되겠지만, partition을 찾으려는 우리의 목적에 어긋나기 때문에 다음과 같은 contraint을 건다.
+각 vertex에 해당하는 $x_i$에 모두 같은 값을 부여하면 위 식이 0으로 최소화되겠지만, partition을 찾으려는 우리의 목적에 어긋나기 때문에 다음과 같은 constraint을 건다.
 
 $$\sum_i \mathbf{x}_i = 0 $$  
 
@@ -143,7 +143,7 @@ relaxed constraint 하에서 최적화 문제를 풀면, vector $\mathbf{x}^*$�
 
 #### Reference
 
-[lecture note: CS 224W - Graph Clustering by Austin Benson](http://snap.stanford.edu/class/cs224w-2016/slides/clustering.pdf)  
-[lecture note: Spectral Graph Theory - The Laplacian by Daniel A. Spielman](https://www.cs.yale.edu/homes/spielman/561/2009/lect02-09.pdf)  
+[Lecture note: CS 224W - Graph Clustering by Austin Benson](http://snap.stanford.edu/class/cs224w-2016/slides/clustering.pdf)  
+[Lecture note: Spectral Graph Theory - The Laplacian by Daniel A. Spielman](https://www.cs.yale.edu/homes/spielman/561/2009/lect02-09.pdf)  
 [Mining Massive Datasets - Stanford University,  lecture 30 - 33](https://youtu.be/FRZvgNvALJ4)  
 [What does the value of eigenvectors of a graph Laplacian matrix mean?](https://math.stackexchange.com/questions/3853424/what-does-the-value-of-eigenvectors-of-a-graph-laplacian-matrix-mean)  
