@@ -19,7 +19,7 @@ tags:
 
 ## Introduction
 
-COVID-19 forecast처럼 전염병 예측의 경우, 접근 방법이 크게 두 가지다. 첫 번째는 mechanistic approach로 전염 역학을 사전적으로 정의한 채 예측하는 방법이다. 두 번째는 time series learning approach다. 시계열 예측에 쓰는 AR이나 시계열 데이터로 LSTM, seq2seq 등 딥러닝을 사용하는 방법이 여기 속한다. 두 approach 모두 상대적으로 inter-regional impact을 (크게) 고려하지 않는, 폐쇄적인 시스템을 가정하고 있다는 점에서 한계가 있다. 
+COVID-19 forecast처럼 전염병 예측의 경우, 접근 방법이 크게 두 가지다. 첫 번째는 mechanistic approach로 전염 역학을 사전적으로 정의한 채 예측하는 방법이다. 두 번째는 time series learning approach다. 시계열 예측에 쓰는 AR이나 시계열 데이터로 LSTM, seq2seq 등 딥러닝을 사용하는 방법이 여기 속한다. 두 approach 모두 상대적으로 inter-regional impact을 (크게) 고려하지 않고, closed-system을 가정하고 있다는 점에서 한계가 있다. 
 
 이 논문은 그 한계를 극복하고자 spatio-temporal graph neural network를 이용해 전염의 복합적인 역학을 학습하는 예측 모델을 제안한다. 
 
@@ -90,7 +90,7 @@ $$\mathbf{P} = mlp(\mathbf{H}_s) $$
 convolution & skip connection을 활용한 모델이다.  
 
 $H_0$은 단순히 node의 temporal 정보를 concatenating해 mlp에 넣은 결과이다.  
-$H_{l+1}$은 근접행렬(정확히 말하면 어떤 방식으로 정규화된..)과 이전 시점의 hidden state $H_l$, 가중치를 곱하고 그에 $H_0$을 concatenating한다. 즉 근접행렬을 곱하기 때문에 convolution이고 $H_0$을 concat하기 때문에 skip-connection이 되는 것이다.
+$H_{l+1}$은 근접행렬(정확히 말하면 *어떤 방식*으로 정규화된..)과 이전 시점의 hidden state $H_l$, 가중치를 곱하고 그에 $H_0$을 concatenating한다. 즉 근접행렬을 곱하기 때문에 convolution이고 $H_0$을 concat하기 때문에 skip-connection이 되는 것이다.
 
 어떤 l+1의 hidden state에 대해서도 $H_0$이 concat 되기 때문에, 앞에서 살펴봤던 Deng, Songgaojun, et al의 모델에 비해 temporal 정보를 더 강하게 반영하게 되는 것 같다.
 
