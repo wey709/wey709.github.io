@@ -4,6 +4,7 @@ date: 2020-07-15
 excerpt: "20200715 세미나 주제"
 excerpt_separator: "<!--more-->"
 layout: single
+read_time: false
 classes: wide
 tags: 
  - deep learning

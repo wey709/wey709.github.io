@@ -5,6 +5,7 @@ excerpt: "읽은 날짜: 201230"
 excerpt_separator: "<!--more-->"
 layout: single
 classes: wide
+read_time: false
 tags: 
  - deep learning
  - graph

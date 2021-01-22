@@ -1,10 +1,11 @@
 ---
 title: "Spectral graph partitioning"
 date: 2021-01-19
-excerpt: "laplacian matrix가 graph partitioning에 어떻게 활용되는지 알아보자"
+excerpt: "Laplacian matrix가 graph partitioning에 어떻게 활용되는지 알아보자"
 excerpt_separator: "<!--more-->"
 layout: single
 classes: wide
+read_time: false
 tags: 
  - graph
 ---
@@ -24,7 +25,7 @@ tags:
 #### Spectral graph theory
 
 위키피디아에 spectral graph theory는 다음과 같이 소개되고 있다:  
-<cite>In mathematics, spectral graph theory is the study of the properties of a graph in relationship to the characteristic polynomial, eigenvalues, and eigenvectors of matrices associated with the graph, such as its adjacency matrix or Laplacian matrix.</cite>
+In mathematics, spectral graph theory is **the study of the properties of a graph in relationship to the characteristic polynomial, eigenvalues, and eigenvectors of matrices associated with the graph,** such as its adjacency matrix or Laplacian matrix.
 
 쉽게말하면 graph의 matrix representing(Adjacency matrix, Laplacian matrix 등..)의 spectrum을 분석하는 것이다.  
 matrix에서 spectrum은 eigenvalue의 집합이므로 이 이론은 그래프를 나타내는 matrix의 eigenvalue, eigenvector를 이용해 graph를 조망한다.   
